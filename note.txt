@@ -1,0 +1,19 @@
+
+python -m SimpleHTTPServer 80
+
+Hex 十六进制
+struct.pack用于将Python的值根据格式符，转换为字符串（因为Python中没有字节(Byte)类型，可以把这里的字符串理解为字节流，或字节数组）。
+>>> a=200
+>>> struct.pack('i',a)
+'\xc8\x00\x00\x00'
+>>> struct.pack('i',a).encode('hex')
+'c8000000'
+
+
+使用python将该浮点数转换成16进制为：
+
+>>> import struct
+>>> struct.pack("<d", 1.123456789012345678901234567890).encode("hex")
+'666f74d3adf9f13f'
+>>> struct.pack("<d", 1.123456789012345678901234567890)
+'fot\xd3\xad\xf9\xf1?'
